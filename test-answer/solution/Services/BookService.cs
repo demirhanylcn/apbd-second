@@ -33,7 +33,7 @@ public class BookService : IBookService
     }
 
 
-    public async void AddBookAsyncAddBookAsync(AddBookRequestDTO addBookRequestDto)
+    public async void AddBookAsync(AddBookRequestDTO addBookRequestDto)
     {
         await  _BookRepository.AddBookAsync(addBookRequestDto);
         await _BookRepository.SaveChangesAsync();
