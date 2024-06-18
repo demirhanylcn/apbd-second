@@ -31,7 +31,11 @@ public class BookController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
-    
+
     [HttpPost]
-    public async Task<IActionResult> AddNewBook ()
+    public async Task<IActionResult> AddNewBook([FromBody] AddBookRequestDTO addBookRequestDto)
+    {
+         _BookService.AddBookAsync(addBookRequestDto);
+         return Ok(1);
+    }
 }

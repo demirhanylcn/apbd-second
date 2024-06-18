@@ -31,4 +31,12 @@ public class BookService : IBookService
             return result;
         }
     }
+
+
+    public async void AddBookAsyncAddBookAsync(AddBookRequestDTO addBookRequestDto)
+    {
+        await  _BookRepository.AddBookAsync(addBookRequestDto);
+        await _BookRepository.SaveChangesAsync();
+        
+    }
 }

@@ -111,6 +111,17 @@ public class BookRepository : BaseRepository, IBookRepository
         var result = await _appDbContext.Books.AnyAsync();
         return result;
     }
-    
+
+
+    public async Task AddBookAsync(AddBookRequestDTO addBookRequestDto)
+    {
+        var result = await _appDbContext.AddAsync(new Book()
+        {
+            Name = addBookRequestDto.name,
+            ReleaseDate = DateTime.Now,
+            IdPublishingHouse = addBookRequestDto.IdPublishingHouse,
+        });
+
+    }
         
     }

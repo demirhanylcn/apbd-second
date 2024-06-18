@@ -6,5 +6,6 @@ namespace solution.Services.Abstract;
 public interface IBookService
 {
     public Task<ListOfBooksResponseDTO> GetListOfBooksAsync(ListOfBooksRequestDTO listOfBooksRequestDto);
+    public void AddBookAsync(AddBookRequestDTO addBookRequestDto);
 
 }

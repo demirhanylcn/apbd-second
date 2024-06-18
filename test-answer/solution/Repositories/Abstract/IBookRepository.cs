@@ -9,5 +9,7 @@ public interface IBookRepository : IBaseRepository
     public Task<ListOfBooksResponseDTO> GetListOfBooksAsyncFiltered(ListOfBooksRequestDTO listOfBooksRequestDto);
 
     public  Task<bool> CheckBookExistsAsync();
+    public Task AddBookAsync(AddBookRequestDTO addBookRequestDto);
+
 
 }
